@@ -4,7 +4,7 @@ const NavigationComponent = () => {
     return (
         <nav>
             <li>
-                <Link to="/">Home</Link>
+                <Link to="/">Kezdolap</Link>
             </li>
             <li>
                 <Link to="/Items">Termekek</Link>
