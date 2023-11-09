@@ -1,11 +1,11 @@
-import "./styles.css";
+import './styles.css';
 import React from 'react';
-import NavigationContainer from "./containers/NavigationContainer";
+import NavigationContainer from './containers/NavigationContainer';
 
 export default function App() {
-    return (
-        <div className="App">
-            <NavigationContainer/>
-        </div>
-    );
+  return (
+    <div className="App">
+      <NavigationContainer />
+    </div>
+  );
 }

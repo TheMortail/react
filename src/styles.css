@@ -1,19 +1,19 @@
 .App {
-    font-family: sans-serif;
-    text-align: center;
+  font-family: sans-serif;
+  text-align: center;
 }
 
 nav {
-    list-style: none;
-    padding: 10px;
-    width: 350px;
-    border-radius: 8px;
-    background-color: darkgray;
+  list-style: none;
+  padding: 10px;
+  width: 350px;
+  border-radius: 8px;
+  background-color: darkgray;
 }
 
 nav li {
-    display: inline;
-    margin-right: 10px;
-    cursor: pointer;
-    text-decoration: none;
+  display: inline;
+  margin-right: 10px;
+  cursor: pointer;
+  text-decoration: none;
 }
