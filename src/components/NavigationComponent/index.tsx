@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const NavigationComponent = () => {
+const Index = () => {
   return (
     <nav>
       <li>
@@ -19,4 +19,4 @@ const NavigationComponent = () => {
   );
 };
 
-export default NavigationComponent;
+export default Index;
