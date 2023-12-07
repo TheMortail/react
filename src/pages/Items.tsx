@@ -1,5 +1,7 @@
+import ItemsContainer from '../containers/ItemsContainer';
+
 const Items = () => {
-  return <h1>Termekek</h1>;
+  return <ItemsContainer />;
 };
 
 export default Items;

@@ -1,4 +1,4 @@
-import {SubmitHandler, useForm} from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import {
@@ -8,6 +8,7 @@ import {
 } from './RegisterFormContainer.schema';
 import TextInputConponent from '../../components/InputFields/TextInputConponent';
 import ButtonComponent from '../../components/InputFields/ButtonComponent';
+import { useNavigate } from 'react-router';
 const LoginFormContainer = () => {
   const {
     register,
@@ -19,8 +20,9 @@ const LoginFormContainer = () => {
     mode: 'onChange',
   });
 
+  const navigate = useNavigate();
   const onSubmit: SubmitHandler<ValidationSchema> = (data) => {
-    alert(JSON.stringify(data, null, 2));
+    navigate('/under-construction', { replace: true });
   };
 
   return (

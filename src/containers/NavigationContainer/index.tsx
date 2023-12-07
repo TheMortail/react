@@ -4,8 +4,9 @@ import Home from '../../pages/Home';
 import Items from '../../pages/Items';
 import About from '../../pages/About';
 import Contact from '../../pages/Contact';
-import RegisterPage from "../../pages/RegisterPage";
-import LoginPage from "../../pages/LoginPage";
+import RegisterPage from '../../pages/RegisterPage';
+import LoginPage from '../../pages/LoginPage';
+import Construction from '../../pages/Construction';
 
 const NavigationContainer = () => {
   return (
@@ -18,6 +19,7 @@ const NavigationContainer = () => {
         <Route path={'/Contact'} element={<Contact />} />
         <Route path={'/Register'} element={<RegisterPage />} />
         <Route path={'/Login'} element={<LoginPage />} />
+        <Route path={'/under-construction'} element={<Construction />} />
       </Routes>
     </>
   );
