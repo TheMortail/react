@@ -15,6 +15,12 @@ const Index = () => {
       <li>
         <Link to="/Contact">Kapcsolat</Link>
       </li>
+      <li>
+        <Link to="/Register">Registralas</Link>
+      </li>
+      <li>
+        <Link to="/Login">Bejelentkezes</Link>
+      </li>
     </nav>
   );
 };

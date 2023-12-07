@@ -1,0 +1,23 @@
+button.ButtonComponent {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(to right, #4caf50, #45a049);
+    transition: background 0.3s ease;
+    margin: 5px;
+}
+
+button.ButtonComponent:hover {
+    background: linear-gradient(to right, #45a049, #4caf50);
+}
+
+button.ButtonComponent:active {
+    transform: scale(0.95);
+}
