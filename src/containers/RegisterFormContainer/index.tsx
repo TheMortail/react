@@ -9,7 +9,15 @@ import {
 import TextInputConponent from '../../components/InputFields/TextInputConponent';
 import CheckBoxInputComponent from '../../components/InputFields/CheckBoxInputComponent';
 import ButtonComponent from '../../components/InputFields/ButtonComponent';
+import { useAppDispatch } from '../../hooks/useAppDispatch';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../store/auth/AuthSelector';
+import { registerUser } from '../../store/auth/AuthSlice';
+import { useNavigate } from 'react-router';
 const RegisterFormContainer = () => {
+  const dispatch = useAppDispatch();
+  const users = useSelector(selectUser);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -21,7 +29,18 @@ const RegisterFormContainer = () => {
   });
 
   const onSubmit: SubmitHandler<ValidationSchema> = (data) => {
-    alert(JSON.stringify(data, null, 2));
+    if (users.filter((user) => user.username === data.username).length === 0) {
+      dispatch(
+        registerUser({
+          username: data.username,
+          password: data.password,
+          email: data.email,
+        }),
+      );
+      navigate('/Login', { replace: true });
+    } else {
+      alert('User already exists!');
+    }
   };
 
   return (

@@ -1,5 +1,7 @@
+import AboutContainer from '../containers/AboutContainer';
+
 const About = () => {
-  return <h1>Rolunk</h1>;
+  return <AboutContainer />;
 };
 
 export default About;

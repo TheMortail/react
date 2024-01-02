@@ -14,6 +14,7 @@ const PontInputComponent = forwardRef<HTMLInputElement, InputType>(
       type = 'text',
       disabled = false,
       required = false,
+      style = {},
     } = props;
     return (
       <>
@@ -28,6 +29,7 @@ const PontInputComponent = forwardRef<HTMLInputElement, InputType>(
             onChange={onChange}
             onBlur={onBlur}
             placeholder={`${label} ${required ? '*' : ''}`}
+            style={style}
           />
           {errorMessage && <p className={'errorText'}>{errorMessage}</p>}
         </div>

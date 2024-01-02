@@ -5,4 +5,5 @@ export type InputType = RegisterReturnType & {
   label?: string;
   errorMessage?: string;
   type?: 'text' | 'password' | 'email' | 'number';
+  style?: {};
 };

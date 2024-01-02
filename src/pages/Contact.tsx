@@ -1,5 +1,7 @@
+import ContactContainer from '../containers/ContactContainer';
+
 const Contact = () => {
-  return <h1>Kapcsolat</h1>;
+  return <ContactContainer />;
 };
 
 export default Contact;

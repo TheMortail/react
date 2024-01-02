@@ -1,17 +1,36 @@
-import { Control, useWatch } from 'react-hook-form';
-import { FC } from 'react';
-import { FieldArrayFormValues } from '../../containers/ItemsContainer/ItemsContainer.schema';
+import { useSelector } from 'react-redux';
+import { selectCart } from '../../store/cart/CartSelector';
+import PontButtonComponent from '../InputFields/ButtonComponent';
+import { useAppDispatch } from '../../hooks/useAppDispatch';
+import { buy } from '../../store/cart/CartSlice';
 
-const Total: FC<{ control: Control<FieldArrayFormValues> }> = ({ control }) => {
-  const formValues = useWatch({
-    name: 'cart',
-    control,
-  });
-  const total = formValues.reduce(
-    (acc, current) => acc + (current.price || 0) * (current.quantity || 0),
-    0,
+const CartTotalComponent = () => {
+  const cart = useSelector(selectCart);
+  const dispatch = useAppDispatch();
+  const getTotal = () => {
+    let totalPrice = 0;
+    cart.forEach((item) => {
+      totalPrice += item.quantity * item.price;
+    });
+
+    return totalPrice;
+  };
+
+  function handlePayment() {
+    if (getTotal() <= 0) {
+      alert('A kosar ures.');
+    } else {
+      dispatch(buy());
+      alert('Kifizetve.');
+    }
+  }
+
+  return (
+    <>
+      <p>Teljes osszeg: ${getTotal()}</p>
+      <PontButtonComponent onClick={handlePayment}>Fizetes</PontButtonComponent>
+    </>
   );
-  return <p>Total Amount: {total}</p>;
 };
 
-export default Total;
+export default CartTotalComponent;
